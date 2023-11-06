@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-content>
+        <div class="container-fluid mt--7">
+            <div class="row">
+                <div class="col">
+                    <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
+                        <ng-template #eventContent let-arg>
+                            <b>{{ arg.timeText }}</b>
+                            <i>{{ arg.event.title }}</i>
+                        </ng-template>
+                    </full-calendar>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

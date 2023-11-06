@@ -1,0 +1,49 @@
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSub()">
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Birth Date</mat-label>
+                    <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="birth_date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Phone Number" formControlName="phone_number">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Address" formControlName="adress">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>CIN</mat-label>
+                    <input matInput placeholder="CIN" formControlName="cin">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Speciality</mat-label>
+                    <input matInput placeholder="Speciality" formControlName="speciality">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Color</mat-label>
+                    <input matInput placeholder="Color" formControlName="color" matColorPicker>
+                </mat-form-field>
+
+                <button type="submit" mat-raised-button>SAVE</button>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  mat-datepicker-toggle {
+    margin-left: 10px;
+  }
+  

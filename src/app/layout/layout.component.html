@@ -1,0 +1,34 @@
+<mat-sidenav-container>
+    <mat-sidenav #drawer fixedInViewport="true" mode="side" opened="true" style="width: 230px; ">
+        <mat-toolbar class="sidebar-style" color="primary" fxLayout fxLayoutGap="16px">
+            <img class="logo" src="../assets/images/logo.png">
+        </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/"><span class="nav-item"><mat-icon>desktop_windows</mat-icon> <span
+                        class="nav-item-text">Dashboard</span></span></a>
+            <a mat-list-item routerLink="/coaches"><span class="nav-item"><mat-icon>fitness_center</mat-icon> <span
+                        class="nav-item-text">Coaches</span></span></a>
+            <a mat-list-item routerLink="/customers"><span class="nav-item"><mat-icon>people</mat-icon> <span
+                        class="nav-item-text">Customers</span></span></a>
+            <a mat-list-item routerLink="/subscriptions"><span class="nav-item"><mat-icon>card_membership</mat-icon>
+                    <span class="nav-item-text">Subscriptions</span></span></a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <div fxFlex fxLayout fxLayoutAlign="start center">
+
+
+                <div fxFlex></div>
+
+                <div class="toolbar-separator"></div>
+                <button class="" mat-menu-item>
+                    <mat-icon>power_settings_new</mat-icon>
+                </button>
+            </div>
+        </mat-toolbar>
+        <div class="content mt-80 mx-16">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

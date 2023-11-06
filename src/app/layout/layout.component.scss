@@ -1,0 +1,51 @@
+.mat-toolbar.mat-primary{
+  background: linear-gradient(90deg, rgba(2,0,36,1) 11%, rgba(243,182,32,1) 60%, rgba(234,234,236,1) 92%, rgba(255,255,255,1) 100%); 
+  height: 150px;
+}
+.material-icons{
+  font-size: 34px;
+}
+.mat-icon{
+  height: 30px;
+  width: 35px;
+}
+.logo{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.sidebar-style{
+  background: transparent !important;
+  height: 120px;
+}
+.mdc-list-item__primary-text{
+  color : red !important;
+}
+.nav-item-text{
+  font-family: Open Sans, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #525f7f;
+}
+.nav-item .mat-icon{
+  margin-right: 9px;
+  font-size: 26px;
+  height: auto;
+  width: auto;
+}
+.nav-item{
+  display: flex;
+  align-items: center;
+}
+
+
+button{
+  border: none;
+  .mat-icon{
+    font-size: 25px;
+    height: auto;
+    width: auto;
+  }
+}
+    

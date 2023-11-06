@@ -1,0 +1,95 @@
+<mat-card>
+    <mat-card-content>
+        <div class="mat-elevation-z8">
+            <button mat-raised-button routerLink="/coaches-form" style="float:right">
+                <mat-icon>library_add</mat-icon>
+            </button>
+            <mat-form-field>
+                <mat-label>search</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="search">
+              </mat-form-field>
+
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="birth_date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Birth Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.birth_date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="phone_number">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </th>
+                    <td mat-cell *matCellDef="let element"> {{element.phone_number}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="adress">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Adress </th>
+                    <td mat-cell *matCellDef="let element"> {{element.adress}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="cin">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cin </th>
+                    <td mat-cell *matCellDef="let element"> {{element.cin}} </td>
+                </ng-container>
+                <ng-container matColumnDef="speciality" mat-sort-header>
+                    <th mat-header-cell *matHeaderCellDef> Speciality </th>
+                    <td mat-cell *matCellDef="let element"> {{element.speciality}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="color">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Associated Color</th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-chip [style.backgroundColor]="element.color" class="color-box">
+                        </mat-chip>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="presence">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-checkbox *ngIf="element.presence" checked disabled></mat-checkbox>
+                        <mat-checkbox *ngIf="!element.presence" (change)="checkBoxChange(element.id)"></mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <ng-container *ngIf="element.attStatus">
+                            <mat-icon class="check-bold mr-4"
+                                style="color: rgb(0, 202, 0); margin-left: 1em;">check_circle</mat-icon>
+                        </ng-container>
+                        <ng-container *ngIf="!element.attStatus">
+                            <mat-icon class="check-bold mr-4"
+                                style="color: rgb(255, 0, 0); margin-left: 1em;">cancel</mat-icon>
+                        </ng-container>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-raised-button routerLink="{{element.id}}/planning/">
+                            <mat-icon>calendar_today</mat-icon>
+                        </button>
+                        <button mat-raised-button routerLink="{{element.id}}/sheet/">
+                            <mat-icon>list_alt</mat-icon>
+                        </button>
+                        <button mat-raised-button routerLink="{{element.id}}/edit/">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-raised-button (click)="delete(element.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </mat-card-content>
+</mat-card>

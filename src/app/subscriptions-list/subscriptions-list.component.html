@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-content>
+        <div class="mat-elevation-z8">
+            <button mat-raised-button routerLink="/subscriptions-form" style="float:right">
+                <mat-icon>library_add</mat-icon>
+            </button>
+            <table mat-table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef> Description </th>
+                    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef> Price </th>
+                    <td mat-cell *matCellDef="let element"> {{element.price}} Dt</td>
+                </ng-container>
+
+                <ng-container matColumnDef="number_of_sessions">
+                    <th mat-header-cell *matHeaderCellDef> N° sessions </th>
+                    <td mat-cell *matCellDef="let element"> {{element.number_of_sessions}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="duration">
+                    <th mat-header-cell *matHeaderCellDef> duration </th>
+                    <td mat-cell *matCellDef="let element"> {{element.duration}}h</td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-raised-button routerLink="{{element.id}}/edit/">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-raised-button (click)="delete(element.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </mat-card-content>
+</mat-card>
